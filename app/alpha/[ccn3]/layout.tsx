@@ -21,9 +21,9 @@ async function CountryId({
   const data: Country[] = await getData(params.ccn3);
 
   return (
-    <div className="mt-10">
+    <div className="mt-10 px-7">
       <Link href={"/"}>
-        <button className="bg-white h-8 flex justify-between items-center py-[6px] px-6 gap-2 shadow-backButton">
+        <button className="bg-white h-8 flex justify-between items-center py-[6px] px-6 gap-2 shadow-backButton mb-16">
           <Image
             src={"/call-made.svg"}
             alt="backArrow"
@@ -34,13 +34,25 @@ async function CountryId({
         </button>
       </Link>
       {data.map((item) => {
-        const asda = Object.keys(item.name.nativeName)[0];
-        const nativeName = item.name.nativeName[asda];
+        const firstArr = Object.keys(item.name.nativeName)[0];
+        const nativeName = item.name.nativeName[firstArr];
+
+        const currecie = Object.keys(item.currencies)[0];
+        const currecieName = item.currencies[currecie];
+
+        const language = Object.keys(item.languages)[0];
+        const languageName = item.languages[language];
+
         return (
           <>
-            <Image alt="sad" width={320} height={229} src={item.flags.svg} />
-            <h2 className="text-[22px] font-extrabold">{item.name.common}</h2>
-            <ul className="flex flex-col gap-y-1">
+            <div className="w-[320px] h-[229px] relative">
+              {" "}
+              <Image alt="sad" fill src={item.flags.svg} />
+            </div>
+            <h2 className="text-[22px] font-extrabold mt-11 mb-4">
+              {item.name.common}
+            </h2>
+            <ul className="flex flex-col gap-y-2 mb-8">
               <li className="text-sm font-normal">
                 <span className="text-sm font-semibold mr-1 text-black">
                   Native Name:
@@ -70,6 +82,26 @@ async function CountryId({
                   Capital:
                 </span>
                 {item.capital}
+              </li>
+            </ul>
+            <ul className="flex flex-col gap-y-2">
+              <li className="text-sm font-normal">
+                <span className="text-sm font-semibold mr-1 text-black">
+                  Top level Domain:
+                </span>
+                {item.tld}
+              </li>
+              <li className="text-sm font-normal">
+                <span className="text-sm font-semibold mr-1 text-black">
+                  Currecies:
+                </span>
+                {currecieName.name}
+              </li>
+              <li className="text-sm font-normal">
+                <span className="text-sm font-semibold mr-1 text-black">
+                  Languages:
+                </span>
+                {languageName}
               </li>
             </ul>
           </>

@@ -18,6 +18,13 @@ export interface NativeName {
     common: string;
 }
 
+export interface FilterProps {
+    country: string
+
+}
+export interface HomeProps {
+    searchParams: FilterProps
+}
 export interface Country {
     name: {
         common: string
@@ -34,7 +41,11 @@ export interface Country {
     capital: string,
     tld: string
     currencies: {
-        name: string;
+        [key: string]: {
+            name: string;
+        }
     }
-    languages: string[]
+    languages: {
+        [key: string]: string
+    }
 }[]

@@ -10,14 +10,11 @@ interface CountryFlagProps {
 function CountryFlag({ country }: CountryFlagProps) {
   return (
     <div className="w-[264px] relative flex flex-col mx-auto shadow-md pb-12 bg-white rounded-md">
-      <Link href={`/alpha/${country.ccn3}`}>
-        <Image
-          alt={country.name.official}
-          width={267}
-          height={160}
-          src={country.flags.svg}
-        />
-      </Link>
+      <div className="w-[264px] h-[160px] relative">
+        <Link href={`/alpha/${country.ccn3}`}>
+          <Image alt={country.name.official} fill src={country.flags.svg} />
+        </Link>
+      </div>
       <div className="ml-6">
         <h2 className="text-lg font-extrabold mt-6 mb-4">
           {country.name.common}
