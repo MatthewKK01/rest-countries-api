@@ -19,18 +19,15 @@ function CountryFilter() {
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (country == "") {
-      alert("Fill in");
+      console.log("fil");
     }
     updateSearchParams(country.toLowerCase());
   };
 
   const updateSearchParams = (country: string) => {
     const searchParams = new URLSearchParams(document.location.search);
-    if (country) {
-      searchParams.set("name", country);
-    } else {
-      searchParams.delete("name");
-    }
+
+    searchParams.set("country", country);
 
     const newPathname = `${
       window.location.pathname
