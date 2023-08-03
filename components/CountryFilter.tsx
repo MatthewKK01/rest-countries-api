@@ -40,7 +40,7 @@ function CountryFilter() {
     <form
       onSubmit={handleSearch}
       onClick={handleDivClick}
-      className="search bg-white shadow-alabama w-[343px] pl-8 mx-auto flex items-center justify-between h-12 my-20"
+      className="search dark:bg-tuna-500 bg-white shadow-alabama w-[343px] pl-8 mx-auto flex items-center justify-between h-12 mb-10"
     >
       <Image
         src={"/search.svg"}
@@ -56,7 +56,7 @@ function CountryFilter() {
         value={country}
         onChange={(e) => setCountry(e.target.value)}
         type="text"
-        className="pl-[26px] text-xs font-normal  focus:outline-none placeholder:text-gray-300"
+        className="pl-[26px] text-xs font-normal dark:bg-tuna-500 dark:text-white  focus:outline-none dark:placeholder:text-white placeholder:text-gray-300"
         placeholder="Search for a country…"
       />
     </form>

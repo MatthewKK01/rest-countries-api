@@ -3,6 +3,5 @@
 @tailwind utilities;
 
 body {
-  @apply bg-alabaster-500;
   min-height: 100vh;
 }

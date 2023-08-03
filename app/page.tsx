@@ -14,7 +14,7 @@ export default async function Home({ searchParams }: HomeProps) {
   console.log(searchParams);
 
   return (
-    <main className=" min-h-screen">
+    <main className=" min-h-screen bg-alabaster-500 pt-6 dark:bg-[#202C36]">
       <section className="wrapper">
         <CountryFilter />
         {/* <ContinentFilter /> */}
